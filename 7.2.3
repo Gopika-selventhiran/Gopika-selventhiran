@@ -1,0 +1,14 @@
+def strcpy_recursive(source, destination, index=0):
+    if source[index] == '\0':
+        destination[index] = '\0'
+        return
+    destination[index] = source[index]
+
+    strcpy_recursive(source, destination, index + 1)
+
+source_str = input("Enter the source string: ")
+destination_str = [''] * (len(source_str) + 1)  # Initialize the destination string with enough space
+
+strcpy_recursive(source_str, destination_str)
+
+print("Copied string:", ''.join(destination_str))
