@@ -1,0 +1,19 @@
+input_string = "hello world"
+
+old_char = 'o'
+
+new_char = 'a'
+
+replaced = False
+
+new_string = ""
+
+for char in input_string:
+    if char == old_char and not replaced:
+        new_string += new_char
+        replaced = True
+    else:
+        new_string += char
+
+print("Original String:", input_string)
+print("Modified String:", new_string)
