@@ -1,0 +1,9 @@
+import math
+n = int(input("Enter the number of integers: "))
+largest_non_perfect_square = -1
+for _ in range(n):
+    num = int(input())
+    if math.isqrt(num)**2 != num:
+        if num > largest_non_perfect_square:
+            largest_non_perfect_square = num
+print(largest_non_perfect_square)
