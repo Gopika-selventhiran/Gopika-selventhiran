@@ -1,0 +1,12 @@
+from collections import Counter
+def largest_subsequence(s, k):
+    char_count = Counter(s)
+    result = []
+    for char in s:
+        if char_count[char] >= k:
+            result.append(char)
+    return ''.join(result)
+s = "abracadabra"
+k = 2
+print("Original string:", s)
+print("Largest subsequence with each character occurring at least", k, "times:", largest_subsequence(s, k))
