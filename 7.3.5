@@ -1,0 +1,10 @@
+def remove_consonants(input_string):
+    consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+    result_string = ''.join(char for char in input_string if char not in consonants)
+    
+    return result_string
+
+input_string = "Hello World"
+result = remove_consonants(input_string)
+print("Original string:", input_string)
+print("String with consonants removed:", result)
