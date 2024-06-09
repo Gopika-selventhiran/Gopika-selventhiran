@@ -1,0 +1,41 @@
+def string_length(string):
+    length = 0
+    for char in string:
+        length += 1
+    return length
+
+def string_copy(string):
+    copy = ""
+    for char in string:
+        copy += char
+    return copy
+
+def string_concatenate(string1, string2):
+    concatenated_string = string1 + string2
+    return concatenated_string
+
+def string_to_uppercase(string):
+    uppercase_string = ""
+    for char in string:
+        if char.isalpha():
+            uppercase_string += char.upper()
+        else:
+            uppercase_string += char
+    return uppercase_string
+
+def compare_strings(string1, string2):
+    if string1 < string2:
+        return f"{string1} comes before {string2} alphabetically."
+    elif string1 > string2:
+        return f"{string1} comes after {string2} alphabetically."
+    else:
+        return "Both strings are equal."
+
+input_string1 = "hello"
+input_string2 = "world"
+
+print("Length of string:", string_length(input_string1))
+print("Copied string:", string_copy(input_string1))
+print("Concatenated string:", string_concatenate(input_string1, input_string2))
+print("Uppercase string:", string_to_uppercase(input_string1))
+print("String comparison:", compare_strings(input_string1, input_string2))
