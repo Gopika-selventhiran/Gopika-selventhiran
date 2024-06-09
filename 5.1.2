@@ -1,0 +1,21 @@
+array = []
+
+num_elements = int(input("Enter the number of elements you want to store: "))
+
+for i in range(num_elements):
+    element = input(f"Enter element {i+1}: ")
+    array.append(element)
+
+search_element = input("Enter the element to search for: ")
+
+position = -1
+
+for i in range(num_elements):
+    if array[i] == search_element:
+        position = i
+        break
+
+if position != -1:
+    print(f"The element '{search_element}' is found at position {position + 1}.")
+else:
+    print(f"The element '{search_element}' is not found in the array.")
