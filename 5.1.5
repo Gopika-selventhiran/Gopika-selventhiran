@@ -1,0 +1,20 @@
+import math
+
+numbers = []
+
+num_elements = int(input("Enter the number of elements you want to store: "))
+
+for i in range(num_elements):
+    number = float(input(f"Enter number {i + 1}: "))
+    numbers.append(number)
+
+mean = sum(numbers) / num_elements
+
+variance = sum((x - mean) ** 2 for x in numbers) / num_elements
+
+deviation = math.sqrt(variance)
+
+print(f"The numbers are: {numbers}")
+print(f"Mean: {mean}")
+print(f"Variance: {variance}")
+print(f"Standard Deviation: {deviation}")
