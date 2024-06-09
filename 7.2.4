@@ -1,0 +1,24 @@
+def find_extra_char(str1, str2):
+    char_count = {}
+
+    for char in str1:
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+
+    for char in str2:
+        if char in char_count:
+            char_count[char] -= 1
+        else:
+            return char  # Extra character found
+
+    for char, count in char_count.items():
+        if count != 0:
+            return char  # Extra character found
+
+string1 = input("Enter the first string: ")
+string2 = input("Enter the second string: ")
+
+extra_char = find_extra_char(string1, string2)
+print("Extra character in the second string:", extra_char)
