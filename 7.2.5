@@ -1,0 +1,8 @@
+def sort_string_alphabetically(input_str):
+    char_list = list(input_str)
+    char_list.sort()
+    sorted_str = ''.join(char_list) 
+    return sorted_str
+input_string = input("Enter a string to sort alphabetically: ")
+sorted_string = sort_string_alphabetically(input_string)
+print("Sorted string:", sorted_string)
