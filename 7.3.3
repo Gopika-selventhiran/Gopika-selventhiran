@@ -1,0 +1,16 @@
+def is_multiple_of_three(binary_str):
+    transitions = {
+        '0': {'0': '0', '1': '1'},
+        '1': {'0': '2', '1': '0'},
+        '2': {'0': '1', '1': '2'}
+    }
+    
+    state = '0'
+    
+    for digit in binary_str:
+        state = transitions[state][digit]
+    
+    return state == '0'
+    
+binary_str = "110"
+print("Is", binary_str, "a multiple of 3?", is_multiple_of_three(binary_str))
