@@ -1,0 +1,43 @@
+def strlen(string):
+    length = 0
+    for char in string:
+        length += 1
+    return length
+
+def strcpy(dest, source):
+    for i in range(len(source)):
+        dest[i] = source[i]
+    dest[len(source)] = '\0'
+
+def strcat(dest, source):
+    dest_len = len(dest)
+    for i in range(len(source)):
+        dest[dest_len + i] = source[i]
+    dest[dest_len + len(source)] = '\0'
+
+def strstr(string, substring):
+    for i in range(len(string)):
+        if string[i:i+len(substring)] == substring:
+            return i
+    return -1
+
+def strrchr(string, char):
+    index = -1
+    for i in range(len(string)):
+        if string[i] == char:
+            index = i
+    return index
+
+string = "hello world"
+substring = "world"
+dest = [' '] * (len(string) + len(substring) + 1)
+
+print("Length of string:", strlen(string))
+print("First occurrence of substring:", strstr(string, substring))
+print("Last occurrence of 'o':", strrchr(string, 'o'))
+
+strcpy(dest, string)
+print("Copied string:", ''.join(dest))
+
+strcat(dest, substring)
+print("Concatenated string:", ''.join(dest))
